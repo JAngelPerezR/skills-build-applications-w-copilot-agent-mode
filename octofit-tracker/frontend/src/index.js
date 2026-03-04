@@ -5,12 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Set the REST API base URL from environment or fallback
-const codespaceName = process.env.REACT_APP_CODESPACE_NAME || '';
-const protocol = window.location.protocol;
-const apiUrl = `${protocol}//${codespaceName ? codespaceName + '-' : ''}8000.app.github.dev`;
-process.env.REACT_APP_CODESPACE_URL = apiUrl;
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

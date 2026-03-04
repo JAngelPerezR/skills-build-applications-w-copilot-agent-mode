@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 const Activities = () => {
   const [activities, setActivities] = useState([]);
   useEffect(() => {
-    const endpoint = `${process.env.REACT_APP_CODESPACE_URL}/api/activities/`;
+    console.log(process.env.REACT_APP_CODESPACE_NAME);
+    const codespaceName = process.env.REACT_APP_CODESPACE_NAME || 'localhost';
+    const endpoint = `https://${codespaceName}-8000.app.github.dev/api/activities/`;
     fetch(endpoint)
       .then(res => res.json())
       .then(data => {
